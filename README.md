@@ -1,1 +1,1 @@
-pure css velocity scrolling animation testing app
+pure css testing app
