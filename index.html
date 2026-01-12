@@ -4,11 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Velocity Scroll // 100% Power</title>
+  <title>Bogdan Oprea // Software Developer</title>
   <link rel="stylesheet" href="./style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;900&family=Space+Grotesk:wght@300;700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -18,76 +20,166 @@
     <div id="smooth-content">
 
       <header class="hero">
-        <h1 class="hero-title">
-          <span class="line" data-speed="0.8">BOGDAN</span>
-          <span class="line" data-speed="1.0">OPREA</span>
-          <span class="line" data-speed="1.2">SOFTWARE DEVELOPER</span>
-        </h1>
-        <p class="hero-sub" data-opacity-scroll>
-          Experience the physics of the web.
-        </p>
+        <div class="hero-content">
+          <p class="hero-label" data-speed="0.9">PORTFOLIO.2025</p>
+          <h1 class="hero-title">
+            <span class="line" data-speed="1.1">BOGDAN</span>
+            <span class="line" data-speed="1.0">OPREA</span>
+          </h1>
+          <h2 class="hero-role" data-speed="0.95">SOFTWARE DEVELOPER</h2>
+
+        </div>
       </header>
 
-      <section class="gallery">
-        <div class="gallery-item-wrapper">
-          <div class="gallery-item" data-speed="0.9">
-            <div class="img-container">
-              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop"
-                alt="Abstract 1">
+      <!-- Experience Section -->
+      <section class="experience-section">
+        <h2 class="section-title">EXPERIENCE</h2>
+
+        <div class="experience-list">
+          <!-- Job 1 -->
+          <article class="job-card" data-speed="1.0">
+            <div class="job-header">
+              <h3 class="job-role">DEVELOPER SUPPORT ENGINEER</h3>
+              <h4 class="job-company">Auth0 by OKTA</h4>
+              <span class="job-date">02/2025 – 10/2025 | Remote</span>
             </div>
-            <span class="caption">FLUIDITY</span>
-          </div>
+            <div class="job-content">
+              <p>Helping fellow developers integrate the Auth0 product into their apps.</p>
+              <ul>
+                <li>Designed and developed custom database connection scripts, actions, and forms to extend platform
+                  functionality.</li>
+                <li>Configured and debugged authentication flows (SAML, OIDC, OAuth) ensuring secure integrations.</li>
+                <li>Built and tested feature showcases tailored to real-world scenarios.</li>
+                <li>Diagnosed and resolved deployment problems, leading to smoother rollouts.</li>
+              </ul>
+              <div class="tech-stack">
+                <span>Node.js</span> <span>Next.js</span> <span>React</span> <span>React Native</span>
+                <span>Salesforce</span> <span>Okta FGA</span> <span>DataDog</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Job 2 -->
+          <article class="job-card alt">
+            <div class="job-header">
+              <h3 class="job-role">JAVA FULL-STACK DEVELOPER</h3>
+              <h4 class="job-company">RAIFFEISEN BANK International</h4>
+              <span class="job-date">04/2023 – 02/2025 | Remote</span>
+            </div>
+            <div class="job-content">
+              <p>Fullstack Development of Microservices and UIs with Java Springboot / Angular / SQL using Agile
+                Methodologies.</p>
+              <div class="stack-categories">
+                <div class="category">
+                  <strong>Backend:</strong> Java, Springboot, Python, Hibernate, Maven/Gradle
+                </div>
+                <div class="category">
+                  <strong>Frontend:</strong> Angular, React, Typescript, Thymeleaf
+                </div>
+                <div class="category">
+                  <strong>DB & DevOps:</strong> PostgreSQL, Liquibase, Jenkins, Docker
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="gallery-item-wrapper right">
-          <div class="gallery-item" data-speed="1.1">
-            <div class="img-container">
-              <img src="https://images.unsplash.com/photo-1614850523296-6313d4dd6741?q=80&w=2564&auto=format&fit=crop"
-                alt="Abstract 2">
-            </div>
-            <span class="caption">MOMENTUM</span>
+      </section>
+
+      <!-- Projects Section (Circular Gallery) -->
+      <section class="projects-section">
+        <h2 class="section-title right">PROJECTS</h2>
+        <div class="gallery-container">
+          <!-- Card 1 -->
+          <div class="project-card">
+            <h3>PROJECT ALPHA</h3>
+            <p>High-performance Fintech Dashboard.</p>
+            <a href="#">CASE STUDY</a>
           </div>
-        </div>
-        <div class="gallery-item-wrapper">
-          <div class="gallery-item" data-speed="1.0">
-            <div class="img-container">
-              <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2670&auto=format&fit=crop"
-                alt="Abstract 3">
-            </div>
-            <span class="caption">PHYSICS</span>
+          <!-- Card 2 -->
+          <div class="project-card">
+            <h3>NEON COMMERCE</h3>
+            <p>Next.js E-commerce with 3D Product View.</p>
+            <a href="#">VISIT SITE</a>
+          </div>
+          <!-- Card 3 -->
+          <div class="project-card">
+            <h3>VELOCITY UI</h3>
+            <p>Open source animation library for React.</p>
+            <a href="#">GITHUB</a>
+          </div>
+          <!-- Card 4 -->
+          <div class="project-card">
+            <h3>AI AGENT</h3>
+            <p>Generative text-to-SQL interface.</p>
+            <a href="#">DEMO</a>
+          </div>
+          <!-- Card 5 -->
+          <div class="project-card">
+            <h3>VOID FOLIO</h3>
+            <p>The website you are currently looking at.</p>
+            <a href="#">SOURCE</a>
           </div>
         </div>
       </section>
 
-      <section class="text-section">
-        <h2 class="outline-text" data-speed="0.95">DEVWISH</h2>
-        <h2 class="fill-text" data-speed="1.05">PROJECTS</h2>
-        <p class="description">
-          Pure CSS rendering driven by Javascript physics. <br>
-          Scroll faster to distort time and space.
-        </p>
-      </section>
+      <!-- Education & Certs (Card Style) -->
+      <section class="edu-section">
+        <h2 class="section-title">BACKGROUND</h2>
+        <div class="experience-list">
 
-      <section class="visuals">
-        <div class="card" data-speed="0.9">
-          <h3>01</h3>
-          <p>Inertia</p>
-        </div>
-        <div class="card" data-speed="1.0">
-          <h3>02</h3>
-          <p>Velocity</p>
-        </div>
-        <div class="card" data-speed="1.1">
-          <h3>03</h3>
-          <p>Distortion</p>
+          <!-- Education Card -->
+          <article class="job-card">
+            <div class="job-header">
+              <h3 class="job-role">EDUCATION</h3>
+              <h4 class="job-company">Computer Science</h4>
+              <span class="job-date">Romanian-American University of Bucharest | 2019 – 2023</span>
+            </div>
+          </article>
+
+          <!-- Certificates Card -->
+          <article class="job-card alt">
+            <div class="job-header">
+              <h3 class="job-role">CERTIFICATES</h3>
+            </div>
+            <div class="job-content">
+              <ul>
+                <li>Auth0 Specialist (Okta)</li>
+                <li>Java & Angular Module (4Mayo)</li>
+                <li>The Web Developer (Colt Steele)</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Languages Card -->
+          <article class="job-card">
+            <div class="job-header">
+              <h3 class="job-role">LANGUAGES</h3>
+              <h4 class="job-company">English (C2) / Romanian (C2) / Spanish (A1)</h4>
+            </div>
+          </article>
+
         </div>
       </section>
 
       <footer class="footer">
-        <h2>FIN</h2>
+        <h2 class="contact-text">Thanks for visiting,<br>let's work together</h2>
+        <div class="footer-meta">
+          <span>BUCHAREST, RO or TENERIFE, ES</span>
+          <span class="separator">//</span>
+          <div class="footer-links">
+            <a href="./assets/my-cv.pdf" download>DOWNLOAD CV</a>
+            <span class="separator">-</span>
+            <a href="https://linkedin.com/in/bogdancojocaruoprea" target="_blank">LINKEDIN</a>
+          </div>
+        </div>
       </footer>
 
     </div>
   </div>
+
+
+
+
 
   <script type="module" src="./main.js"></script>
 </body>

@@ -1,9 +1,13 @@
 :root {
-  --bg: #0a0a0a;
-  --text: #ffffff;
-  --accent: #00ffcc;
-  --skew: 0deg; /* Updated by JS */
-  --scale: 1;   /* Updated by JS */
+  --bg: #050505;
+  --text: #eaeaea;
+  --accent: #6f42c1;
+  /* Deep Purple for Auth0/Dev vibe */
+  --accent-light: #d63384;
+  /* Pink/Magenta pop */
+  --card-bg: #111;
+  --skew: 0deg;
+  --scale: 1;
 }
 
 * {
@@ -15,185 +19,368 @@
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: 'Outfit', sans-serif;
-  overflow: hidden; /* Lenis handles scrolling */
-  overscroll-behavior: none;
+  font-family: 'Space Grotesk', sans-serif;
+  overflow: hidden;
 }
 
-/* The content wrapper that gets skewed */
+/* Scroll Container */
 #smooth-content {
   will-change: transform;
-  transform: skewY(var(--skew)) scaleY(var(--scale));
+  transform: skewY(var(--skew));
   transform-origin: center center;
-  transition: transform 0.1s linear; /* Smooth out JS updates slightly */
 }
+
+
 
 /* Hero */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  padding: 2rem;
   position: relative;
-  z-index: 2;
+}
+
+.hero-content {
+  text-align: center;
+  mix-blend-mode: color-dodge;
+}
+
+.hero-label {
+  font-size: 1.2rem;
+  letter-spacing: 0.5em;
+  color: var(--accent);
+  margin-bottom: 2rem;
 }
 
 .hero-title {
-  font-size: 12vw;
-  line-height: 0.85;
+  font-size: 15vw;
+  line-height: 0.8;
+  font-family: 'Outfit', sans-serif;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: -0.05em;
-  mix-blend-mode: exclusion;
 }
 
-.hero-title .line {
-  display: block;
-}
-
-.hero-sub {
-  font-size: 1.5rem;
-  margin-top: 2rem;
+.hero-role {
+  font-size: 2rem;
   font-weight: 300;
-  opacity: 0.7;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
+  margin-top: 2rem;
+  color: #888;
 }
 
-/* Gallery */
-.gallery {
-  padding: 10vh 5vw;
+.hero-meta {
+  margin-top: 4rem;
+  font-size: 1.1rem;
+  font-weight: bold;
   display: flex;
-  flex-direction: column;
-  gap: 15vh;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.gallery-item-wrapper {
-  display: flex;
-  width: 100%;
-}
-.gallery-item-wrapper.right {
-  justify-content: flex-end;
+.hero-meta a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
 }
 
-.gallery-item {
-  position: relative;
-  width: 50vw;
-  max-width: 600px; /* Limit size */
+/* Sections */
+section {
+  padding: 15vh 5vw;
 }
 
-.img-container {
-  overflow: hidden;
-  width: 100%;
-  padding-bottom: 125%; /* Aspect ratio */
-  position: relative;
-  border-radius: 4px;
-}
-
-.img-container img {
-  position: absolute;
-  top: -20%; /* For parallax inside image if we wanted, or just fit */
-  left: 0;
-  width: 100%;
-  height: 140%;
-  object-fit: cover;
-  transition: transform 0.5s ease-out;
-}
-
-.caption {
-  position: absolute;
-  top: 50%;
-  left: -10%;
-  transform: translateY(-50%) rotate(-90deg);
-  font-size: 4rem;
+.section-title {
+  font-size: 8vw;
   font-weight: 900;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--accent);
-  letter-spacing: 0.1em;
-  z-index: 10;
-  pointer-events: none;
-}
-.right .caption {
-   left: auto;
-   right: -10%;
-   transform: translateY(-50%) rotate(90deg);
+  color: #222;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  margin-bottom: 5vh;
 }
 
-/* Text Section */
-.text-section {
-  min-height: 80vh;
+.section-title.right {
+  text-align: right;
+}
+
+/* Experience */
+.experience-list {
+  display: block;
+  /* Removed gap, using margin on sticky items */
+  padding-bottom: 20vh;
+}
+
+.job-card {
+  position: relative;
+  background: #000;
+  border: 1px solid #333;
+  padding: 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+  border-left: 4px solid #444;
+  /* Softer accent */
+  transition: transform 0.3s;
+  /* Rolodex Animation */
+  view-timeline-name: --job-item;
+  view-timeline-axis: block;
+  animation: rotate-in linear both;
+  animation-timeline: --job-item;
+  animation-range: entry 0% cover 40%;
+}
+
+
+
+.job-card.alt {
+  align-self: flex-end;
+  /* Offset layout */
+}
+
+.job-role {
+  font-size: 2.5rem;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+}
+
+.job-company {
+  font-size: 1.5rem;
+  color: #ccc;
+  /* Silver instead of accent */
+  margin-bottom: 0.5rem;
+}
+
+.job-date {
+  display: block;
+  margin-bottom: 2rem;
+  color: #666;
+  font-family: monospace;
+}
+
+.job-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #bbb;
+}
+
+.job-content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+  color: #999;
+}
+
+.job-content li {
+  margin-bottom: 0.5rem;
+}
+
+.tech-stack,
+.stack-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.tech-stack span,
+.category strong {
+  background: #222;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--accent-light);
+  border: 1px solid #333;
+}
+
+/* Projects Gallery (Rolodex Scroll) */
+.projects-section {
+  padding: 10vh 5vw;
+  perspective: 1000px;
+  /* Essential for 3D effect */
+}
+
+.gallery-container {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 20vh;
+}
+
+.project-card {
+  position: sticky;
+  top: 15vh;
+  background: #000;
+  border: 1px solid #333;
+  border-left: 4px solid #fff;
+  padding: 3rem;
+  color: #fff;
+  transform-style: preserve-3d;
+  border-radius: 16px;
+  margin-bottom: 30vh;
+  transform-origin: top center;
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 1);
+
+  /* Infinite Stack Animation */
+  animation: stack-scale linear both;
+  animation-timeline: view();
+  animation-range: exit-crossing 0% exit-crossing 100%;
+}
+
+@keyframes stack-scale {
+  to {
+    transform: scale(0.9) translateY(-50px);
+    filter: brightness(0.3);
+  }
+}
+
+@keyframes rotate-in {
+  0% {
+    opacity: 0.2;
+    transform: rotateX(-30deg) scale(0.8) translateY(50px);
+    border-color: #333;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg) scale(1) translateY(0);
+    /* border-color: #ccc; Removed border color transition as pseudo handles it */
+  }
+}
+
+.project-card h3,
+.job-role {
+  font-size: 2.5rem;
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: 0.5rem;
+  color: #e0e0e0;
+}
+
+.project-card p {
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.project-card a {
+  display: inline-block;
+  color: #ccc;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: all 0.3s;
+}
+
+.project-card a:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Education */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.edu-item {
+  padding: 2rem;
+  border-top: 1px solid #333;
+}
+
+.edu-item h3 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.edu-item ul {
+  list-style: none;
+  color: #888;
+}
+
+/* Footer */
+/* Footer */
+.footer {
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 10vw;
-  font-weight: 900;
-  line-height: 0.9;
-  text-transform: uppercase;
-  perspective: 1000px;
+  background: var(--bg);
+  /* Black */
+  gap: 2rem;
+  text-align: center;
 }
 
-.outline-text {
-  color: transparent;
-  -webkit-text-stroke: 2px rgba(255,255,255,0.3);
-}
-
-.description {
-    font-size: 1.2rem;
-    max-width: 400px;
-    text-align: center;
-    margin-top: 4rem;
-    font-weight: 300;
-    line-height: 1.6;
-    color: var(--accent);
-}
-
-/* Cards */
-.visuals {
-    display: flex;
-    justify-content: space-around;
-    padding: 20vh 5vw;
-    gap: 2rem;
-}
-
-.card {
-    background: #111;
-    border: 1px solid #333;
-    padding: 3rem 2rem;
-    flex: 1;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: background 0.3s;
-}
-.card:hover {
-    background: #1a1a1a;
-    border-color: var(--accent);
-}
-
-.card h3 {
-    font-size: 4rem;
-    color: var(--accent);
-}
-
-.card p {
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-/* Footer */
-.footer {
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    color: #000;
-}
 .footer h2 {
+  font-size: 5vw;
+  /* Smaller purely for length */
+  font-weight: 900;
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+
+
+.footer-meta {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #888;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-meta a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.footer-meta a:hover {
+  color: #000;
+  background: #fff;
+  border-color: #fff;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-title {
     font-size: 20vw;
-    font-weight: 900;
+  }
+
+  .job-card {
+    padding: 2rem;
+  }
+
+  .skill-tag {
+    font-size: 1.2rem;
+  }
+
+  /* Autonomous Fixes */
+  .edu-grid {
+    grid-template-columns: 1fr;
+    /* Stack on mobile */
+  }
+
+  .footer h2 {
+    font-size: 15vw;
+    /* Bigger on mobile */
+  }
 }
