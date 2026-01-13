@@ -16,12 +16,15 @@ requestAnimationFrame(raf)
 
 // 2. Velocity & Skew Logic (Pure CSS)
 lenis.on('scroll', (e) => {
-  // Update Skew for CSS
-  // Limit skew preventing visual glitching
   const velocity = e.velocity;
-  const skew = Math.max(Math.min(velocity * 0.1, 10), -10); // Cap at 10deg
-
-  document.documentElement.style.setProperty('--skew', `${skew}deg`);
-
+  const skew = Math.max(Math.min(velocity * 0.1, 10), -10);
   document.documentElement.style.setProperty('--skew', `${skew}deg`);
 });
+
+// 3. Scroll to Top
+const scrollTopBtn = document.querySelector('.scroll-top-btn');
+if (scrollTopBtn) {
+  scrollTopBtn.addEventListener('click', () => {
+    lenis.scrollTo(0);
+  });
+}

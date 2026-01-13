@@ -55,12 +55,74 @@ body {
 }
 
 .hero-title {
-  font-size: 15vw;
-  line-height: 0.8;
+  font-size: 12vw;
+  /* Made smaller */
+  line-height: 0.9;
   font-family: 'Outfit', sans-serif;
   font-weight: 900;
   text-transform: uppercase;
+  color: #dcdcdc;
+  /* Slightly softer white */
 }
+
+.hero-title .line {
+  display: block;
+}
+
+/* Letters */
+.hero-title .line span {
+  display: inline-block;
+  animation: no-gravity 6s ease-in-out infinite alternate;
+}
+
+/* Staggered Delays for Space Drift */
+.hero-title .line span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.hero-title .line span:nth-child(2) {
+  animation-delay: -1s;
+}
+
+.hero-title .line span:nth-child(3) {
+  animation-delay: -2s;
+}
+
+.hero-title .line span:nth-child(4) {
+  animation-delay: -3s;
+}
+
+.hero-title .line span:nth-child(5) {
+  animation-delay: -4s;
+}
+
+.hero-title .line span:nth-child(6) {
+  animation-delay: -5s;
+}
+
+
+@keyframes no-gravity {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(4px, -6px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-4px, 6px) rotate(-1deg);
+  }
+
+  75% {
+    transform: translate(3px, -3px) rotate(0.5deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
 
 .hero-role {
   font-size: 2rem;
@@ -171,8 +233,7 @@ section {
   margin-bottom: 0.5rem;
 }
 
-.tech-stack,
-.stack-categories {
+.tech-stack {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
@@ -192,43 +253,37 @@ section {
 /* Projects Gallery (Rolodex Scroll) */
 .projects-section {
   padding: 10vh 5vw;
-  perspective: 1000px;
-  /* Essential for 3D effect */
+  /* Removed perspective as it's no longer a 3D stack */
 }
 
 .gallery-container {
   display: block;
   max-width: 800px;
   margin: 0 auto;
-  padding-bottom: 20vh;
+  /* padding-bottom removed */
 }
 
 .project-card {
-  position: sticky;
-  top: 15vh;
+  position: relative;
   background: #000;
   border: 1px solid #333;
   border-left: 4px solid #fff;
   padding: 3rem;
   color: #fff;
-  transform-style: preserve-3d;
   border-radius: 16px;
-  margin-bottom: 30vh;
-  transform-origin: top center;
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 1);
+  margin-bottom: 2rem;
+  /* Standard spacing */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 
-  /* Infinite Stack Animation */
-  animation: stack-scale linear both;
-  animation-timeline: view();
-  animation-range: exit-crossing 0% exit-crossing 100%;
+  /* Entry Animation matches Experience section */
+  view-timeline-name: --project-item;
+  view-timeline-axis: block;
+  animation: rotate-in linear both;
+  animation-timeline: --project-item;
+  animation-range: entry 0% cover 40%;
 }
 
-@keyframes stack-scale {
-  to {
-    transform: scale(0.9) translateY(-50px);
-    filter: brightness(0.3);
-  }
-}
+/* Removed stack-scale keyframes */
 
 @keyframes rotate-in {
   0% {
@@ -342,20 +397,53 @@ section {
   gap: 1.5rem;
   align-items: center;
   justify-content: center;
+  margin-top: 1rem;
 }
 
-.footer-meta a {
-  color: #fff;
+/* Transform Links to Buttons */
+.footer-links a {
+  background: transparent;
+  color: #888;
+  border: 1px solid #333;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2px;
+  /* Rectangular */
   text-decoration: none;
-  border-bottom: 1px solid #fff;
-  font-size: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: normal;
   transition: all 0.3s ease;
+  font-family: 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.footer-meta a:hover {
-  color: #000;
-  background: #fff;
+.footer-links a:hover {
+  color: #fff;
   border-color: #fff;
+  background: transparent;
+  transform: translateY(-5px);
+}
+
+.scroll-top-btn {
+  margin-top: 3rem;
+  background: transparent;
+  color: #888;
+  border: 1px solid #333;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2px;
+  /* Rectangular */
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.scroll-top-btn:hover {
+  color: #fff;
+  border-color: #fff;
+  transform: translateY(-5px);
 }
 
 
