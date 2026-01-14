@@ -22,8 +22,7 @@ By avoiding the overhead of a Virtual DOM (React, Vue, etc.), this application p
 - **Micro-Bundle Size**: Without strictly necessary vendor code, the final JavaScript bundle is tiny. Users on slow 3G/4G connections can load the site almost instantly.
 - **Faster Time-to-Interactive**: There is no "hydration" phase. The moment the HTML and CSS load, the site is interactive.
 
-### 3. Battery Efficient
-Less JavaScript execution means less CPU usage, which directly translates to significantly reduced battery drain for battery-based devices such as mobile phones and laptops.
+
 
 ### Summary
-This stack proves that you don't need a 500kb JavaScript bundle to create a modern, "wow" factor website. It prioritizes the user's resources, delivering a premium experience that is inclusive of all devices and connection speeds which is why i decided to use it for my portfolio in a web-era filled with hundreds of frameworks and libraries.
+This stack proves that you don't need a JavaScript bundle to create a modern, "wow" factor website. It prioritizes the user's resources, delivering a premium experience that is inclusive of all devices and connection speeds which is why i decided to use it for my portfolio in a web-era filled with hundreds of frameworks and libraries.
