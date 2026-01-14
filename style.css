@@ -2,9 +2,7 @@
   --bg: #050505;
   --text: #eaeaea;
   --accent: #6f42c1;
-  /* Deep Purple for Auth0/Dev vibe */
   --accent-light: #d63384;
-  /* Pink/Magenta pop */
   --card-bg: #111;
   --skew: 0deg;
   --scale: 1;
@@ -20,10 +18,8 @@ body {
   background-color: var(--bg);
   color: var(--text);
   font-family: 'Space Grotesk', sans-serif;
-  overflow: hidden;
 }
 
-/* Scroll Container */
 #smooth-content {
   will-change: transform;
   transform: skewY(var(--skew));
@@ -32,7 +28,6 @@ body {
 
 
 
-/* Hero */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -56,26 +51,22 @@ body {
 
 .hero-title {
   font-size: 12vw;
-  /* Made smaller */
   line-height: 0.9;
   font-family: 'Outfit', sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   color: #dcdcdc;
-  /* Slightly softer white */
 }
 
 .hero-title .line {
   display: block;
 }
 
-/* Letters */
 .hero-title .line span {
   display: inline-block;
   animation: no-gravity 6s ease-in-out infinite alternate;
 }
 
-/* Staggered Delays for Space Drift */
 .hero-title .line span:nth-child(1) {
   animation-delay: 0s;
 }
@@ -147,7 +138,6 @@ body {
   border-bottom: 1px solid var(--accent);
 }
 
-/* Sections */
 section {
   padding: 15vh 5vw;
 }
@@ -164,10 +154,8 @@ section {
   text-align: right;
 }
 
-/* Experience */
 .experience-list {
   display: block;
-  /* Removed gap, using margin on sticky items */
   padding-bottom: 20vh;
 }
 
@@ -179,9 +167,7 @@ section {
   max-width: 900px;
   margin: 0 auto;
   border-left: 4px solid #444;
-  /* Softer accent */
   transition: transform 0.3s;
-  /* Rolodex Animation */
   view-timeline-name: --job-item;
   view-timeline-axis: block;
   animation: rotate-in linear both;
@@ -193,7 +179,6 @@ section {
 
 .job-card.alt {
   align-self: flex-end;
-  /* Offset layout */
 }
 
 .job-role {
@@ -205,7 +190,6 @@ section {
 .job-company {
   font-size: 1.5rem;
   color: #ccc;
-  /* Silver instead of accent */
   margin-bottom: 0.5rem;
 }
 
@@ -250,17 +234,14 @@ section {
   border: 1px solid #333;
 }
 
-/* Projects Gallery (Rolodex Scroll) */
 .projects-section {
   padding: 10vh 5vw;
-  /* Removed perspective as it's no longer a 3D stack */
 }
 
 .gallery-container {
   display: block;
   max-width: 800px;
   margin: 0 auto;
-  /* padding-bottom removed */
 }
 
 .project-card {
@@ -272,18 +253,14 @@ section {
   color: #fff;
   border-radius: 16px;
   margin-bottom: 2rem;
-  /* Standard spacing */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 
-  /* Entry Animation matches Experience section */
   view-timeline-name: --project-item;
   view-timeline-axis: block;
   animation: rotate-in linear both;
   animation-timeline: --project-item;
   animation-range: entry 0% cover 40%;
 }
-
-/* Removed stack-scale keyframes */
 
 @keyframes rotate-in {
   0% {
@@ -295,7 +272,6 @@ section {
   100% {
     opacity: 1;
     transform: rotateX(0deg) scale(1) translateY(0);
-    /* border-color: #ccc; Removed border color transition as pseudo handles it */
   }
 }
 
@@ -328,7 +304,6 @@ section {
   color: #000;
 }
 
-/* Education */
 .edu-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -354,8 +329,6 @@ section {
   color: #888;
 }
 
-/* Footer */
-/* Footer */
 .footer {
   height: 50vh;
   display: flex;
@@ -363,14 +336,12 @@ section {
   justify-content: center;
   align-items: center;
   background: var(--bg);
-  /* Black */
   gap: 2rem;
   text-align: center;
 }
 
 .footer h2 {
   font-size: 5vw;
-  /* Smaller purely for length */
   font-weight: 900;
   font-family: 'Outfit', sans-serif;
   line-height: 1.1;
@@ -400,14 +371,12 @@ section {
   margin-top: 1rem;
 }
 
-/* Transform Links to Buttons */
 .footer-links a {
   background: transparent;
   color: #888;
   border: 1px solid #333;
   padding: 0.8rem 1.5rem;
   border-radius: 2px;
-  /* Rectangular */
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: normal;
@@ -431,7 +400,6 @@ section {
   border: 1px solid #333;
   padding: 0.8rem 1.5rem;
   border-radius: 2px;
-  /* Rectangular */
   cursor: pointer;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.9rem;
@@ -447,7 +415,7 @@ section {
 }
 
 
-/* Mobile */
+/* mobile */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 20vw;
@@ -461,14 +429,11 @@ section {
     font-size: 1.2rem;
   }
 
-  /* Autonomous Fixes */
   .edu-grid {
     grid-template-columns: 1fr;
-    /* Stack on mobile */
   }
 
   .footer h2 {
     font-size: 15vw;
-    /* Bigger on mobile */
   }
 }
