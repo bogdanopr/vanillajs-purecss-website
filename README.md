@@ -26,3 +26,5 @@ By avoiding the overhead of a Virtual DOM (React, Vue, etc.), this application p
 
 ### Summary
 This stack proves that you don't need a JavaScript bundle to create a modern, "wow" factor website. It prioritizes the user's resources, delivering a premium experience that is inclusive of all devices and connection speeds which is why i decided to use it for my portfolio in a web-era filled with hundreds of frameworks and libraries.
+
+Tips on improvements and PRs are appreciated !
